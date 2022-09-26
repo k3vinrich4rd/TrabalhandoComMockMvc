@@ -18,6 +18,7 @@ public class FilmeController {
 
     @GetMapping(path = "/{codigo}")
     public ResponseEntity<FilmeModel> obterFilme(@PathVariable Long codigo) {
+
         if (codigo < 0) {
             return ResponseEntity.badRequest().build();
         }
